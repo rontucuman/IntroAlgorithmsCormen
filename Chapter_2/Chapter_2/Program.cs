@@ -7,17 +7,46 @@ namespace Chapter_2
   {
     static void Main(string[] args)
     {
-      int[] a = new[] {1, 0, 1};
-      int[] b = new[] {0, 1, 0};
-      
-      Console.WriteLine(GetArrayAsString("a =  ", a));
-      Console.WriteLine(GetArrayAsString("b =  ", b));
-      
-      int[] sum = AddBinary(a, b);
+      int[] a = new[] {45, 20, 18, 51, 8, 13, 1};
+      Console.WriteLine(GetArrayAsString("A -> ", a));
 
-      Console.WriteLine(GetArrayAsString("s = ", sum));
+      SelectionSort(a);
+
+      Console.WriteLine(GetArrayAsString("SS -> ", a));
       
       Console.ReadKey();
+    }
+
+    /**
+     * Exercise 2.2-2
+     * Selection Sort
+     *
+     * int[] a = new[] {45, 20, 18, 51, 8, 13};
+     * SelectionSort(a);
+     */
+    public static void SelectionSort(int[] a)
+    {
+      for (int i = 0; i < a.Length - 1; i++)
+      {
+        int smallestIndex = i;
+        int smallest = a[smallestIndex];
+
+        int aux = a[i];
+
+        for (int j = i + 1; j < a.Length; j++)
+        {
+          if (a[j] < smallest)
+          {
+            smallestIndex = j;
+            smallest = a[j];
+          }
+        }
+
+        a[i] = a[smallestIndex];
+        a[smallestIndex] = aux;
+
+        Console.WriteLine(GetArrayAsString($"\ti -> {i} ", a));
+      }
     }
 
     /**
@@ -139,17 +168,25 @@ namespace Chapter_2
     private static string GetArrayAsString(string prefix, int[] input)
     {
       StringBuilder sb = new StringBuilder();
-      sb.Append($"{prefix}[ ");
+      sb.Append($"{prefix}");
 
-      string comma = string.Empty;
-
-      for (int i = 0; i < input.Length; i++)
+      if (input == null)
       {
-        sb.Append($"{comma}{input[i]}");
-        comma = ", ";
+        sb.Append("NULL");
       }
+      else
+      {
+        sb.Append("[ ");
+        string comma = string.Empty;
 
-      sb.Append(" ]");
+        for (int i = 0; i < input.Length; i++)
+        {
+          sb.Append($"{comma}{input[i]}");
+          comma = ", ";
+        }
+
+        sb.Append(" ]");
+      }
 
       return sb.ToString();
     }
