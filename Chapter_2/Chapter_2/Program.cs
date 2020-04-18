@@ -7,8 +7,8 @@ namespace Chapter_2
   {
     static void Main(string[] args)
     {
-      int[] A = new[] {45, 20, 18, 35, 11, 28, 59, 2};
-    
+      int[] A = new[] { 3, 41, 52, 26, 38, 57, 9, 49 };
+
       Console.WriteLine(GetArrayAsString("",A));
       MergeSorter ms = new MergeSorter();
       ms.Process(A);
