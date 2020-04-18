@@ -8,10 +8,10 @@ namespace Chapter_2
     static void Main(string[] args)
     {
       int[] A = new[] { 3, 41, 52, 26, 38, 57, 9, 49 };
-
+      //int[] A = new[] {8, 5, 1};
       Console.WriteLine(GetArrayAsString("",A));
-      MergeSorter ms = new MergeSorter();
-      ms.Process(A);
+      InsertionSort insertionSort = new InsertionSort();
+      insertionSort.Process(A);
       Console.WriteLine(GetArrayAsString("",A));
       Console.ReadKey();
     }
@@ -140,30 +140,7 @@ namespace Chapter_2
         input[i + 1] = key;
       }
     }
-
-    /**
-     * int[] a = new[] {5, 2, 4, 6, 1, 3};
-     */
-    public static void InsertionSortAsc(int[] input)
-    {
-      for (int j = 1; j < input.Length; j++)
-      {
-        int key = input[j];
-        int i = j - 1;
-
-        while (i >= 0 && input[i] > key)
-        {
-          input[i + 1] = input[i];
-          //Console.WriteLine(GetArrayAsString($"{j - 1} - {i} ", input));
-          i = i - 1;
-        }
-
-        input[i + 1] = key;
-
-        //Console.WriteLine(GetArrayAsString($"{j - 1} - ", input));
-      }
-    }
-
+    
     private static string GetArrayAsString(string prefix, int[] input)
     {
       StringBuilder sb = new StringBuilder();
