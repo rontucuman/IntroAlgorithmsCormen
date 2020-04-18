@@ -55,6 +55,28 @@ namespace Chapter_2
       }
     }
 
+    /**
+     * Exercise 2.1-2
+     *
+     * int[] a = new[] {31, 41, 59, 26, 41, 58};
+     */
+    public void InsertionSortDesc(int[] input)
+    {
+      for (int j = 1; j < input.Length; j++)
+      {
+        int key = input[j];
+        int i = j - 1;
+
+        while (i >= 0 && input[i] < key)
+        {
+          input[i + 1] = input[i];
+          i = i - 1;
+        }
+
+        input[i + 1] = key;
+      }
+    }
+
     private string GetArrayAsString(string prefix, int[] input)
     {
       StringBuilder sb = new StringBuilder();
