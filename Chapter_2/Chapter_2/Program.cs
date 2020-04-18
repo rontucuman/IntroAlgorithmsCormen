@@ -7,13 +7,12 @@ namespace Chapter_2
   {
     static void Main(string[] args)
     {
-      int[] a = new[] {45, 20, 18, 51, 8, 13, 1};
-      Console.WriteLine(GetArrayAsString("A -> ", a));
-
-      SelectionSort(a);
-
-      Console.WriteLine(GetArrayAsString("SS -> ", a));
-      
+      int[] A = new[] {45, 20, 18, 35, 11, 28, 59, 2};
+    
+      Console.WriteLine(GetArrayAsString("",A));
+      MergeSorter ms = new MergeSorter();
+      ms.Process(A);
+      Console.WriteLine(GetArrayAsString("",A));
       Console.ReadKey();
     }
 
