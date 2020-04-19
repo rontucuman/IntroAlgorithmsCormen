@@ -11,8 +11,9 @@ namespace IntroductionToAlgorithms
   {
     static void Main(string[] args)
     {
-      //int[] A = new[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-      int[] A = new[] {45,21,89,32,74,58,41,20,69,52,21,46};
+      int[] A = new[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+      //int[] A = new[] {45,21,89,32,74,58,41,20,69,52,21,46};
+      //int[] A = new[] {3, 6, 4, 2, 1};
 
       Exercise2_3_6_InsertionSortRecursive bs = new Exercise2_3_6_InsertionSortRecursive();
 
