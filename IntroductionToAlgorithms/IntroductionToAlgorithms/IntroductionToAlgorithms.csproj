@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chapter2\Exercises\Exercise2_3_5_BinarySearch.cs" />
+    <Compile Include="Chapter2\Exercises\Exercise2_3_6_InsertionSortRecursive.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

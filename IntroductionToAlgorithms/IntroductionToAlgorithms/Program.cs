@@ -12,16 +12,15 @@ namespace IntroductionToAlgorithms
     static void Main(string[] args)
     {
       //int[] A = new[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-      int[] A = new[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-      int valueToSearch = 98;
+      int[] A = new[] {45,21,89,32,74,58,41,20,69,52,21,46};
 
-      Exercise2_3_5_BinarySearch bs = new Exercise2_3_5_BinarySearch();
+      Exercise2_3_6_InsertionSortRecursive bs = new Exercise2_3_6_InsertionSortRecursive();
 
       Console.WriteLine(GetArrayAsString("", A));
 
-      int foundIndex = bs.Process(A, valueToSearch);
+      bs.Process(A);
 
-      Console.WriteLine($"Index found = {foundIndex}");
+      Console.WriteLine(GetArrayAsString("", A));
     }
 
     private static string GetArrayAsString(string prefix, int[] input)
